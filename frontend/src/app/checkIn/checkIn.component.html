@@ -1,0 +1,90 @@
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://i.ibb.co/Qv7qHv7/meeting-icon-233.png" alt="rocket_contact"/>
+    </div>
+    <form #visitorForm="ngForm">
+        <h3>Schedule meeting with us</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Enter your details</h4>
+                <div class="form-group" [class.has-error]="visitorName.invalid && visitorName.touched"  [class.has-success]="visitorName.valid">
+                    <input type="text" id="visitorName" name="visitorName" class="form-control" placeholder="Your Name *" required [(ngModel)]="user.visitorName"  #visitorName="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="visitorName.invalid && visitorName.touched">
+                                Full Name is required
+                        </span>
+                </div>
+                <div class="form-group" [class.has-error]="visitorEmail.invalid && visitorEmail.touched"  [class.has-success]="visitorEmail.valid">
+                    <input type="email" id="visitorEmail" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="visitorEmail" class="form-control" placeholder="Your Email *" required [(ngModel)]="user.visitorEmail"  #visitorEmail="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="visitorEmail.errors?.required && visitorEmail.touched">
+                                Email is required
+                        </span>
+                        <span class="help-block"
+                            *ngIf="visitorEmail.errors?.pattern && visitorEmail.touched">
+                                Email is invalid
+                        </span>
+                </div>
+                <div class="form-group" [class.has-error]="visitorMobileNumber.invalid && visitorMobileNumber.touched"  [class.has-success]="visitorMobileNumber.valid">
+                    <input type="tel" id="visitorMobileNumber" pattern="^[0-9]*$" minlength="10" maxlength="10" name="visitorMobileNumber" class="form-control" placeholder="Your Phone Number *" required [(ngModel)]="user.visitorMobileNumber"  #visitorMobileNumber="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="visitorMobileNumber.errors?.required && visitorMobileNumber.touched">
+                                Phone Number is required
+                        </span>
+                        <span class="help-block"
+                            *ngIf="visitorMobileNumber.errors?.pattern && visitorMobileNumber.touched">
+                                Phone Number is invalid
+                        </span>
+                        <span class="help-block"
+                            *ngIf="!visitorMobileNumber.errors?.pattern && visitorMobileNumber.errors?.minlength && visitorMobileNumber.touched">
+                                Phone Number must be 10 digits number
+                        </span>
+                </div>
+                <div class="form-group" [class.has-error]="address.invalid && address.touched"  [class.has-success]="address.valid">
+                    <textarea name="address" class="form-control" id="address" placeholder="Address *" style="width: 100%; height: 150px;" required [(ngModel)]="user.address"  #address="ngModel"></textarea>
+                        <span class="help-block"
+                            *ngIf="address.invalid && address.touched">
+                                Address is required
+                        </span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Enter Host Details</h4>
+                <div class="form-group" [class.has-error]="hostName.invalid && hostName.touched"  [class.has-success]="hostName.valid">
+                    <input type="text" id="hostName" name="hostName" class="form-control" placeholder="Host Name *" required [(ngModel)]="user.hostName"  #hostName="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="hostName.invalid && hostName.touched">
+                                Full Name is required
+                        </span>
+                </div>
+                <div class="form-group" [class.has-error]="hostEmail.invalid && hostEmail.touched"  [class.has-success]="hostEmail.valid">
+                    <input type="email" id="hostEmail" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="hostEmail" class="form-control" placeholder="Host Email *" required [(ngModel)]="user.hostEmail"  #hostEmail="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="hostEmail.errors?.required && hostEmail.touched">
+                                Email is required
+                        </span>
+                        <span class="help-block"
+                            *ngIf="hostEmail.errors?.pattern && hostEmail.touched">
+                                Email is invalid
+                        </span>
+                </div>
+                <div class="form-group" [class.has-error]="hostMobileNumber.invalid && hostMobileNumber.touched"  [class.has-success]="hostMobileNumber.valid">
+                    <input type="tel" id="hostMobileNumber" pattern="^[0-9]*$" minlength="10" maxlength="10" name="hostMobileNumber" class="form-control" placeholder="Host Phone Number *" required [(ngModel)]="user.hostMobileNumber"  #hostMobileNumber="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="hostMobileNumber.errors?.required && hostMobileNumber.touched">
+                                Phone Number is required
+                        </span>
+                        <span class="help-block"
+                            *ngIf="hostMobileNumber.errors?.pattern && hostMobileNumber.touched">
+                                Phone Number is invalid
+                        </span>
+                        <span class="help-block"
+                            *ngIf="!hostMobileNumber.errors?.pattern && hostMobileNumber.errors?.minlength && hostMobileNumber.touched">
+                                Phone Number must be 10 digits number
+                        </span>
+                </div>
+                <button type="button" class="btnContact" (click)="createUser() " [disabled]="!visitorForm.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

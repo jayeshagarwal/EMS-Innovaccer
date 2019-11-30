@@ -1,0 +1,28 @@
+<div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+        </div>
+        <form #visitorForm="ngForm">
+            <h3>Do you want to check out ?</h3>
+           <div class="row">
+                <div class="col-md-12">                
+                    <div class="form-group" [class.has-error]="visitorMobileNumber.invalid && visitorMobileNumber.touched"  [class.has-success]="visitorMobileNumber.valid">
+                        <input type="tel" id="visitorMobileNumber" pattern="^[0-9]*$" minlength="10" maxlength="10" name="visitorMobileNumber" class="form-control" placeholder="Your Phone Number *" required [(ngModel)]="user.visitorMobileNumber"  #visitorMobileNumber="ngModel"/>
+                        <span class="help-block"
+                            *ngIf="visitorMobileNumber.errors?.required && visitorMobileNumber.touched">
+                            Phone Number is required
+                        </span>
+                        <span class="help-block"
+                            *ngIf="visitorMobileNumber.errors?.pattern && visitorMobileNumber.touched">
+                            Phone Number is invalid
+                        </span>
+                        <span class="help-block"
+                            *ngIf="!visitorMobileNumber.errors?.pattern && visitorMobileNumber.errors?.minlength && visitorMobileNumber.touched">
+                            Phone Number must be 10 digits number
+                        </span>
+                    </div>
+                    <button type="button" class="btnContact" (click)="updateUser() " [disabled]="visitorForm.invalid">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>

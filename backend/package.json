@@ -1,0 +1,32 @@
+{
+    "name": "backend",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "nodemon ./bin/www"
+    },
+    "dependencies": {
+        "bcrypt": "^3.0.7",
+        "body-parser": "^1.19.0",
+        "cookie-parser": "~1.4.4",
+        "cors": "^2.8.5",
+        "debug": "~4.1.1",
+        "dotenv": "^8.2.0",
+        "express": "~4.17.1",
+        "g": "^2.0.1",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "~1.9.1",
+        "mysql2": "^2.0.1",
+        "node-localstorage": "^2.1.4",
+        "nodemailer": "^6.3.1",
+        "sequelize": "^5.21.2",
+        "sequelize-auto": "^0.4.29",
+        "sequelize-paginate": "^1.1.6",
+        "twilio": "^3.37.1",
+        "winston": "^3.2.1",
+        "winston-daily-rotate-file": "^4.3.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
+}
