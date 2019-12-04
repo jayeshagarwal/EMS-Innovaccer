@@ -103,4 +103,4 @@ The screenshots for different pages of the app are in screenshots folder
 * Name: Jayesh Agarwal
 * Email: jayeshagarwal58@gmail.com and 17uec059@lnmiit.ac.in
 * Phone No.: +91 7339896336
-* LinkedIn: https://www.linkedin.com/in/jayesh58/
+* LinkedIn: https://www.linkedin.com/in/jayesh-agarwal/
