@@ -24,7 +24,7 @@
     "@material/icon-button": "^4.0.0",
     "@syncfusion/ej2-angular-calendars": "^17.3.28",
     "bootstrap": "^4.4.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-opd-popup": "^1.1.21",
     "ngx-toastr": "^11.2.1",
     "rxjs": "~6.5.3",
