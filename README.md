@@ -1,5 +1,4 @@
-# Innovaccer-SDE-Intern-Assignment
-An Entry Management software
+# An Entry Management System Software
 
 ## Problem Statement
 
